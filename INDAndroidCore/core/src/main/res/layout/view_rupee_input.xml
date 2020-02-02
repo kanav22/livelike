@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
+
+    <TextView
+        android:id="@+id/customRupeeCurrency"
+        style="@style/RupeeInputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/customRupeeInput"
+        android:layout_alignBottom="@+id/customRupeeInput"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:text="₹"
+        android:visibility="gone" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/customRupeeInput"
+        style="@style/RupeeInputStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_toStartOf="@+id/customRupeeInputFormattedValue"
+        android:layout_toEndOf="@+id/customRupeeCurrency"
+        android:digits="0123456789"
+        android:hint="Enter amount"
+        android:inputType="phone"
+        android:maxLength="9"
+        app:met_floatingLabelText="Amount"
+        app:met_hideUnderline="true" />
+
+    <TextView
+        android:id="@+id/customRupeeInputFormattedValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/customRupeeInput"
+        android:layout_alignBottom="@+id/customRupeeInput"
+        android:layout_alignParentEnd="true"
+        android:alpha="0.7"
+        android:fontFamily="@font/avenir400"
+        android:gravity="center"
+        android:textSize="12sp"
+        tools:text="₹1.5 Cr" />
+
+    <View
+        android:id="@+id/bottomLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/customRupeeInput"
+        android:layout_marginTop="-14dp"
+        android:background="@color/textColorLabels" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bottomLine">
+
+        <TextView
+            android:id="@+id/customRupeeInputFormattedValueBelow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:alpha="0.7"
+            android:fontFamily="@font/avenir400"
+            android:maxLines="2"
+            android:textColor="#616161"
+            android:textSize="14sp"
+            tools:text="₹1.5 Cr" />
+
+        <TextView
+            android:id="@+id/customRupeeInputError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:alpha="0.7"
+            android:fontFamily="@font/avenir400"
+            android:textColor="#F84B3E"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            tools:text="₹1.5 Cr" />
+    </FrameLayout>
+</RelativeLayout>

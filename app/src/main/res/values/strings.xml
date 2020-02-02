@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HiveProject</string>
+    <string name="zomatoTitle">Zomato</string>
+    <string name="offersTitle">Offers</string>
+    <string name="welcomeMessage">Welcome foodie</string>
+    <string name="restaurantsTitle">All restaurants</string>
+    <string name="searchString">Search for restaurants,dishes...</string>
+    <string name="sortString"><![CDATA[Sort by Price->low to high]]></string>
+    <string name="limitString">Limit count to 10</string>
+</resources>

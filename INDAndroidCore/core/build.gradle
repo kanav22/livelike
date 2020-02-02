@@ -1,0 +1,117 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../dependency.gradle'
+
+android {
+    compileSdkVersion versions.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+repositories {
+    google()
+    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    jcenter()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api deps.kotlin.stdlib
+    api deps.support.core_ktx
+    api deps.support.app_compat
+    api deps.support.fragment_runtime_ktx
+    api deps.constraint_layout
+
+    api deps.retrofit.runtime
+    api deps.retrofit.gson
+    api deps.okhttp_logging_interceptor
+
+    api deps.moshi.moshi
+    api deps.moshi.moshiKotlin
+    kapt deps.moshi.codeGen
+    api deps.retrofit.moshi
+
+    api deps.timber
+    api deps.ui.picasso
+    api deps.ui.monthandyearpicker
+    api(deps.ui.bottomsheetpickers) {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'design'
+        exclude group: 'com.android.support', module: 'gridlayout-v7'
+    }
+    api deps.ui.browser
+    api deps.playServices.auth
+
+    api deps.firebase.core
+    api deps.firebase.analytics
+    api deps.firebase.messaging
+
+    /** Analytics */
+    api deps.segment.core
+    api deps.segment.googleAnalytics
+    api deps.segment.mixpanel
+    api deps.segment.firebase
+    api deps.appsFlyer.analytics
+
+
+    api deps.lifecycle.common
+    api deps.lifecycle.extensions
+    api deps.lifecycle.viewmodel_ktx
+    api deps.lifecycle.livedata_ktx
+    api deps.lifecycle.runtime_ktx
+    kapt deps.lifecycle.compiler
+
+    api deps.ui.materialEditText
+
+    api 'androidx.multidex:multidex:2.0.1'
+    api 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+
+    api 'com.google.firebase:firebase-appindexing:19.0.0'
+
+    api deps.kotlin.coroutines
+    api 'com.google.android.play:core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2'
+    testImplementation 'junit:junit:4.13-beta-3'
+//    androidTestImplementation 'androidx.test:runner:1.2.1'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+// enabling experimental for Kotlin parcelize supports
+androidExtensions {
+    experimental = true
+}
+
+repositories {
+    mavenCentral()
+}

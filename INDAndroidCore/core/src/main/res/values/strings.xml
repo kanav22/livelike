@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">core</string>
+
+    <string name="msg_loading_preview">Loading Preview…</string>
+    <string name="dialog_title_alert">Alert</string>
+
+    <!--Rupee Input-->
+    <string name="rupee_input_below_words_prefix">( Entered amount: %s)</string>
+
+    <string name="cams_support_email">private@indwealth.in</string>
+    <string name="support_email">support@indwealth.in</string>
+    <string name="deeplink_host">www.indwealth.in</string>
+
+</resources>

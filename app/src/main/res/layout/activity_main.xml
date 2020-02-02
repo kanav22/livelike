@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/frameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:id="@+id/lunchboxLayout"
+            android:layout_width="200dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:drawableStart="@drawable/zomato"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/avenir600"
+                android:text="@string/zomatoTitle"
+                android:textColor="@color/black_effective"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+
+            >
+
+            <TextView
+                android:id="@+id/offersIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="30dp"
+                android:drawableStart="@drawable/discount"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/avenir600"
+                android:text="@string/offersTitle"
+                android:textColor="@color/black_effective"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50sp"
+        android:layout_marginBottom="49dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/menu"
+
+        >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</FrameLayout>

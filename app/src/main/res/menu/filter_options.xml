@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/moreOption"
+        android:title="@string/sortString" />
+    <item
+        android:id="@+id/moreOption2"
+        android:title="@string/limitString" />
+</menu>

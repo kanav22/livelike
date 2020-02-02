@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RupeeInput">
+        <attr name="android:hint" format="string" />
+        <attr name="android:label" format="string" />
+        <attr name="android:textSize" format="dimension" />
+        <attr name="showWordBelow" format="boolean" />
+        <attr name="showWordRight" format="boolean" />
+        <attr name="textSizeWordsBelow" format="dimension" />
+        <attr name="hideThousands" format="boolean" />
+        <attr name="max_amount" format="integer" />
+    </declare-styleable>
+</resources>
